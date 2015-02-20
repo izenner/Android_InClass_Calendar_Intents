@@ -34,22 +34,26 @@ public class SecondActivity extends Activity {
 		}
 		
 		if (eventNum.equals("1")) {
-			tvTitle.setText("Red Baraat");
-			tvSum.setText("Red Baraat has established a reputation as one of the best live bands playing in the world. Led by dhol drummer Sunny Jain, the nine piece band melds the infectious North Indian rhythm Bhangra with a host of sounds, namely funk, go-go, Latin, and jazz.");
+			tvTitle.setText("Black Violin");
+			tvSum.setText("Voted one of the Top 5 New Bands at SXSW in 2013, Black Violin is an American hip hop duo from Florida comprised of  two classically trained string instrumentalists, Kev Marcus and Wil B. Kev Marcus plays the violin and Wil B. plays the viola. Black Violin clinched the Showtime at the Apollo 2005 Legend title.");
 			tvLoc.setText("Mitchell Auditorium");
-			tvDate.setText("FRIDAY, FEBRUARY 22, 2013");
+			tvDate.setText("TUESDAY, FEBRUARY 24, 2015");
 		}
 		if (eventNum.equals("2")) {
-			tvTitle.setText("Billy McLaughlin and His Eclectic String Quartet");
-			tvSum.setText("Billy McLaughlin is recognized internationally as a best-selling guitar virtuoso, composer and inspirational performer. In 2001, Billy was diagnosed with focal dystonia, an incurable neuromuscular disease that robbed him of the ability to play his own music.");
+			tvTitle.setText("Click Clack Moo");
+			tvSum.setText("\"Cows that type? Hens on strike! Whoever heard of such a thing!\" Farmer Brown cries.\n" +
+                    "When his granddaughter Jenny comes for a visit, Farmer Brown declared the farm a \"tech-free zone.\" He confiscates her laptop in the cold barn along with the shivering cows who use her computer to type messages requesting blankets.\n" +
+                    "\"No way,\" replies Farmer Brown. \"No blankets!\"\n" +
+                    "So the cows go on strike and the chickens join them in solidarity. No blankets: no milk, no eggs!\n" +
+                    "Will Farmer Brown give in to the animals' demands? Will Jenny get her computer back? Find out in a hilariously \"mooooo-ving\" new musical about negotiation and compromise, based on the Caldecott Honor Book by Doreen Cronin and Betsy Lewin.");
 			tvLoc.setText("Mitchell Auditorium");
-			tvDate.setText("FRIDAY, March 8, 2013");
+			tvDate.setText("THURSDAY, FEBRUARY 26, 2015");
 		}
 		if (eventNum.equals("3")) {
-			tvTitle.setText("Battlefield Band");
-			tvSum.setText("A bedrock of talent for over four decades,Battlefield Band continue to lead the way for Scotland with their inspired fusion of ancient and modern traditional music and song.");
+			tvTitle.setText("Thistle and Shamrocks");
+			tvSum.setText("Presented by the Duluth Scottish Heritage Association. An evening of Scottish and Irish music and dance.");
 			tvLoc.setText("Mitchell Auditorium");
-			tvDate.setText("FRIDAY, March 22, 2013");
+			tvDate.setText("FRIDAY, March 6, 2015");
 		}
 		
 	}
@@ -67,10 +71,10 @@ public class SecondActivity extends Activity {
 		
 			Intent calIntent = new Intent(Intent.ACTION_INSERT);
 			calIntent.setType("vnd.android.cursor.item/event");
-			calIntent.putExtra(Events.TITLE, "Red Baraat");
+			calIntent.putExtra(Events.TITLE, "Black Violin");
 			calIntent.putExtra(Events.EVENT_LOCATION, "Mitchell Auditorium");
-			GregorianCalendar begDate = new GregorianCalendar(2015, 2, 22, 7, 30);
-			GregorianCalendar endDate = new GregorianCalendar(2015, 2, 22, 9, 30);
+			GregorianCalendar begDate = new GregorianCalendar(2015, 1, 24, 7, 30);
+			GregorianCalendar endDate = new GregorianCalendar(2015, 1, 24, 9, 30);
 			calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
 					begDate.getTimeInMillis());
 			calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,
@@ -80,19 +84,25 @@ public class SecondActivity extends Activity {
 		if (eventNum.equals("2")) {
 			Intent calIntent = new Intent(Intent.ACTION_INSERT);
 			calIntent.setType("vnd.android.cursor.item/event");
-			calIntent.putExtra(Events.TITLE, "Billy McLaughlin");
+			calIntent.putExtra(Events.TITLE, "Click Clack Moo");
 			calIntent.putExtra(Events.EVENT_LOCATION, "Mitchell Auditorium");
+            GregorianCalendar begDate = new GregorianCalendar(2015, 1, 26, 12, 30);
+            GregorianCalendar endDate = new GregorianCalendar(2015, 1, 26, 1, 30);
+            calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
+                    begDate.getTimeInMillis());
+            calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,
+                    endDate.getTimeInMillis());
 			startActivity(calIntent);
 		}
 		if (eventNum.equals("3")) {
 			Intent calIntent = new Intent(Intent.ACTION_INSERT);
 			calIntent.setType("vnd.android.cursor.item/event");
-			calIntent.putExtra(Events.TITLE, "Battlefield Band");
+			calIntent.putExtra(Events.TITLE, "Thistle and Shamrocks");
 			calIntent.putExtra(Events.EVENT_LOCATION, "Mitchell Auditorium");
 			Calendar beginTime = Calendar.getInstance();
-			beginTime.set(2015, 2, 22, 7, 30);
+			beginTime.set(2015, 2, 6, 7, 00);
 			Calendar endTime = Calendar.getInstance();
-			endTime.set(2015, 2, 22, 9, 30);
+			endTime.set(2015, 2, 6, 8, 00);
 			calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
 					beginTime.getTimeInMillis());
 			calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,
